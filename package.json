@@ -61,7 +61,8 @@
   },
   "scripts": {
     "start": "react-scripts --no-experimental-webstorage --max-old-space-size=8192 start",
-    "build": "react-scripts --no-experimental-webstorage --max-old-space-size=8192 build",
+    "build": "node scripts/build.cjs",
+    "lint": "eslint src --ext .js,.jsx",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

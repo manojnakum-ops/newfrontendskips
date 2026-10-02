@@ -2,6 +2,12 @@
 
 Copy .env.example to .env and configure the Google OAuth client ID for your environment.
 
+## Netlify deployment
+
+Netlify uses `netlify.toml`: run `npm run build` and publish `build` with Node 24. The production build defaults to a 4096 MB Node heap with source maps disabled. `scripts/production-webpack.cjs` splits bundles toward 512 KiB chunks and limits JavaScript/CSS minification to one worker per minimizer to reduce peak memory. These overrides use the pinned React Scripts 5 production pipeline. ESLint runs separately with `npm run lint` so it does not share memory with Webpack during deployment. Compiler warnings remain visible, and compilation errors still fail the build.
+
+Set `REACT_APP_GOOGLE_CLIENT_ID` in Netlify's build environment if Google sign-in is enabled. The local `.env` file is not committed. `npm start` retains its 8192 MB development heap setting.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
