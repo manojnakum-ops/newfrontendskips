@@ -60,8 +60,8 @@
     "youtube-search-api": "^1.2.2"
   },
   "scripts": {
-    "start": "node --no-experimental-webstorage --max-old-space-size=8192 node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node --no-experimental-webstorage --max-old-space-size=8192 node_modules/react-scripts/bin/react-scripts.js build",
+    "start": "react-scripts --no-experimental-webstorage --max-old-space-size=8192 start",
+    "build": "react-scripts --no-experimental-webstorage --max-old-space-size=8192 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
